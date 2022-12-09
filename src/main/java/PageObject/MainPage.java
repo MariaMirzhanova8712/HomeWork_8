@@ -1,17 +1,22 @@
 package PageObject;
 
+import com.codeborne.selenide.SelenideElement;
 import lombok.Data;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static com.codeborne.selenide.Selenide.$;
 
 @Data
 public class MainPage {
 
-    String mainPageUrl = "http://the-internet.herokuapp.com";
+    private final String mainPageUrl = "http://the-internet.herokuapp.com";
 
-    @FindBy(xpath = "//*[@href='/ checkboxes']")
-    public WebElement checkboxes1;
+    private final SelenideElement checkboxes1 = $(By.xpath("checkboxes1"));
+
 
 
 }
